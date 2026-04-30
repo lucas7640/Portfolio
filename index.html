@@ -788,205 +788,52 @@
     z-index: 3;
   }
 
-  /* Callout tags overlaid on hero render */
-  .callout {
-    position: absolute;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.05em;
-    color: var(--fg-85);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    pointer-events: none;
-    z-index: 4;
-    text-transform: uppercase;
-  }
-  .callout .pin {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-22);
-  }
+  /* Callout */
+  .callout { position: absolute; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: var(--fg-85); display: flex; align-items: center; gap: 8px; pointer-events: none; z-index: 4; text-transform: uppercase; }
+  .callout .pin { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-22); }
   .callout .lbl { color: var(--fg-55); }
   .callout .val { color: var(--fg); }
-
-  /* Problem / Approach / Outcome row — same as .three-col */
   .pao { margin-bottom: var(--gap-block); }
-
-  /* Gallery grid */
-  .gallery {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 12px;
-    margin-bottom: var(--gap-block);
-  }
+  .gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 12px; margin-bottom: var(--gap-block); }
   .gallery .render-ph { margin-bottom: 0; aspect-ratio: 4 / 3; }
-  @media (max-width: 800px) {
-    .gallery { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 800px) { .gallery { grid-template-columns: 1fr; } }
+  .highlights { border-top: 1px solid var(--line); padding-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-grid); }
+  .highlights .stat .num { font-family: var(--font-display); font-size: var(--fs-stat); font-weight: 500; color: var(--accent); line-height: 1; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .highlights .stat .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--fg); text-transform: uppercase; margin-bottom: 6px; }
+  .highlights .stat .sub { font-family: var(--font-display); font-size: 13px; color: var(--fg-55); line-height: 1.4; }
+  @media (max-width: 800px) { .highlights { grid-template-columns: repeat(2, 1fr); } }
 
-  /* Highlights stat bar */
-  .highlights {
-    border-top: 1px solid var(--line);
-    padding-top: 28px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--gap-grid);
-  }
-  .highlights .stat .num {
-    font-family: var(--font-display);
-    font-size: var(--fs-stat);
-    font-weight: 500;
-    color: var(--accent);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-  }
-  .highlights .stat .lbl {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--fg);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .highlights .stat .sub {
-    font-family: var(--font-display);
-    font-size: 13px;
-    color: var(--fg-55);
-    line-height: 1.4;
-  }
-  @media (max-width: 800px) {
-    .highlights { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* ========== CAPABILITIES ========== */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .skill {
-    border: 1px solid var(--line);
-    padding: 20px;
-    border-radius: 2px;
-    background: var(--bg-2);
-    transition: border-color 0.2s;
-  }
+  /* CAPABILITIES */
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .skill { border: 1px solid var(--line); padding: 20px; border-radius: 2px; background: var(--bg-2); transition: border-color 0.2s; }
   .skill:hover { border-color: var(--accent-blue); }
-  .skill .num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-    margin-bottom: 12px;
-  }
-  .skill .name {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 6px;
-  }
-  .skill .meta {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--fg-50);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  @media (max-width: 800px) {
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  .skill .num { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 12px; }
+  .skill .name { font-family: var(--font-display); font-size: 18px; font-weight: 500; margin-bottom: 6px; }
+  .skill .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-50); letter-spacing: 0.05em; text-transform: uppercase; }
+  @media (max-width: 800px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 
-  /* ========== CONTACT ========== */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: var(--gap-grid);
-    align-items: end;
-    margin-bottom: var(--gap-block);
-  }
-  .contact-grid h2 {
-    font-family: var(--font-display);
-    font-size: var(--fs-h2);
-    font-weight: 500;
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    margin: 0;
-    text-wrap: balance;
-  }
-  @media (max-width: 800px) {
-    .contact-grid { grid-template-columns: 1fr; }
-  }
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 320px; gap: var(--gap-grid); align-items: end; margin-bottom: var(--gap-block); }
+  .contact-grid h2 { font-family: var(--font-display); font-size: var(--fs-h2); font-weight: 500; line-height: 0.95; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+  @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: var(--gap-block); }
+  @media (max-width: 800px) { .contact-actions { grid-template-columns: 1fr; } }
+  .contact-card { border: 1px solid var(--line); padding: 28px; background: var(--bg-2); transition: border-color 0.2s; display: block; color: var(--fg); }
+  .contact-card:hover { border-color: var(--accent-blue); color: var(--fg); }
+  .contact-card .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 14px; }
+  .contact-card .value { font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .contact-card .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-50); letter-spacing: 0.05em; text-transform: uppercase; }
 
-  .contact-actions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: var(--gap-block);
-  }
-  @media (max-width: 800px) {
-    .contact-actions { grid-template-columns: 1fr; }
-  }
-  .contact-card {
-    border: 1px solid var(--line);
-    padding: 28px;
-    background: var(--bg-2);
-    transition: border-color 0.2s;
-    display: block;
-    color: var(--fg);
-  }
-  .contact-card:hover {
-    border-color: var(--accent-blue);
-    color: var(--fg);
-  }
-  .contact-card .label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--accent-blue);
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .contact-card .value {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    margin-bottom: 6px;
-  }
-  .contact-card .meta {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--fg-50);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  /* ========== FOOTER ========== */
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 40px 32px;
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--fg-45);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
+  /* FOOTER */
+  footer { border-top: 1px solid var(--line); padding: 40px 32px; text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--fg-45); letter-spacing: 0.06em; text-transform: uppercase; }
   footer .brand-mark { display: inline-block; margin-right: 10px; vertical-align: middle; }
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
 <nav>
   <div class="nav-inner">
-    <div class="brand">
-      <span class="brand-mark"></span>
-      LG / MECH ENG · 2026
-    </div>
+    <div class="brand"><span class="brand-mark"></span>LG / MECH ENG &middot; 2026</div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#projects">FSAE</a>
@@ -997,32 +844,25 @@
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="container">
     <div class="hero-name">Lucas Goellner</div>
     <h1>Mechanical <span class="accent">Engineering</span> and Design.</h1>
-
     <div class="cta-row">
-      <a class="btn btn-primary" href="#projects">View CAD Work →</a>
+      <a class="btn btn-primary" href="#projects">View CAD Work &rarr;</a>
       <a class="btn btn-ghost" href="#contact">Get In Touch</a>
     </div>
-
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section id="about" class="about">
   <div class="container">
     <div class="section-header">
-      <span class="index">00 / ABOUT</span>
-      <span class="line"></span>
-      <span class="title">B.S. Mech Eng · UMich '28</span>
+      <span class="index">00 / ABOUT</span><span class="line"></span><span class="title">B.S. Mech Eng &middot; UMich '28</span>
     </div>
-
     <div class="about-grid">
       <div>
-        <div class="kicker">Mechanical Engineering Student · CAD Design Focus</div>
+        <div class="kicker">Mechanical Engineering Student &middot; CAD Design Focus</div>
         <h2>UMich engineer. Competition hardware. First principles analysis.</h2>
       </div>
       <div class="spec-table">
@@ -1033,32 +873,27 @@
         <div class="row"><span>Status</span><span class="v">Seeking Intern</span></div>
       </div>
     </div>
-
     <div class="three-col" style="grid-template-columns: 1fr 1fr;">
       <div>
         <div class="col-label">CURRENT</div>
-        <p>Chassis Engineer on the Michigan Mars Rover Team — designing the differential bar and chassis body in Siemens NX.</p>
+        <p>Chassis Engineer on the Michigan Mars Rover Team &mdash; designing the differential bar and chassis body in Siemens NX.</p>
       </div>
       <div>
         <div class="col-label">PREVIOUS</div>
-        <p>Brake System Team Lead at Dearborn Electric Racing — led the FSAE EV pedal box through first principles analysis, mechanical design, FEA validation, and in-house manufacturing on a $2,000 budget.</p>
+        <p>Brake System Team Lead at Dearborn Electric Racing &mdash; led the FSAE EV pedal box through first principles analysis, mechanical design, FEA validation, and in-house manufacturing on a $2,000 budget.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FEATURED WORK — PEDAL BOX ===== -->
 <section id="projects" class="feature">
   <div class="container">
     <div class="section-header">
-      <span class="index">01 / FEATURED</span>
-      <span class="line"></span>
-      <span class="title">FSAE EV · 2024 — 2025</span>
+      <span class="index">01 / FEATURED</span><span class="line"></span><span class="title">FSAE EV &middot; 2024 &mdash; 2025</span>
     </div>
-
     <div class="case-title" style="margin-bottom: 56px;">
       <div>
-        <div class="kicker">Dearborn Electric Racing · Brake System Team Lead</div>
+        <div class="kicker">Dearborn Electric Racing &middot; Brake System Team Lead</div>
         <h2>Brake System Design. 32-Part Pedal Box Assembly.</h2>
       </div>
       <div class="spec-table">
@@ -1070,107 +905,75 @@
         <div class="row"><span>Status</span><span class="v">Competition Verified</span></div>
       </div>
     </div>
-
     <div class="feature-grid">
-      <!-- STICKY VISUAL -->
       <div class="feature-stage">
         <div class="feature-rail" data-rail-target="pedal-box">
           <button class="rail-item" data-rail-step="0">Overview</button>
-          <button class="rail-item" data-rail-step="1">A1 · Brake Pedal</button>
-          <button class="rail-item" data-rail-step="2">A2 · Accelerator</button>
-          <button class="rail-item" data-rail-step="3">B1 · Master Cyl.</button>
-          <button class="rail-item" data-rail-step="4">B2 · Balance Bar</button>
-          <button class="rail-item" data-rail-step="5">C1 · APPS Mount</button>
+          <button class="rail-item" data-rail-step="1">A1 &middot; Brake Pedal</button>
+          <button class="rail-item" data-rail-step="2">A2 &middot; Accelerator</button>
+          <button class="rail-item" data-rail-step="3">B1 &middot; Master Cyl.</button>
+          <button class="rail-item" data-rail-step="4">B2 &middot; Balance Bar</button>
+          <button class="rail-item" data-rail-step="5">C1 &middot; APPS Mount</button>
         </div>
         <div class="feature-canvas" data-active="0" data-feature="pedal-box">
-          <span class="bracket tl"></span><span class="bracket tr"></span>
-          <span class="bracket bl"></span><span class="bracket br"></span>
-          <div class="label"><span class="dot">●</span> PEDAL_BOX_V9 · SIDE PROFILE</div>
-          <div class="mode-tag">
-            <span class="mode-overview">SCHEMATIC · OVERVIEW</span>
-            <span class="mode-detail">BLUEPRINT · DETAIL</span>
-          </div>
-
+          <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+          <div class="label"><span class="dot">&#9679;</span> PEDAL_BOX_V9 &middot; SIDE PROFILE</div>
+          <div class="mode-tag"><span class="mode-overview">SCHEMATIC &middot; OVERVIEW</span><span class="mode-detail">BLUEPRINT &middot; DETAIL</span></div>
           <svg class="schematic" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <!-- Floor / mount plate (always on, never highlighted) -->
-            <line x1="60" y1="320" x2="540" y2="320" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
-            <!-- Mount tabs -->
-            <line x1="80" y1="320" x2="80" y2="340" stroke="rgba(255,255,255,0.25)" />
-            <line x1="520" y1="320" x2="520" y2="340" stroke="rgba(255,255,255,0.25)" />
-            <line x1="60" y1="340" x2="540" y2="340" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 4" />
-
-            <!-- 1. Brake Pedal -->
+            <line x1="60" y1="320" x2="540" y2="320" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <line x1="80" y1="320" x2="80" y2="340" stroke="rgba(255,255,255,0.25)"/>
+            <line x1="520" y1="320" x2="520" y2="340" stroke="rgba(255,255,255,0.25)"/>
+            <line x1="60" y1="340" x2="540" y2="340" stroke="rgba(255,255,255,0.15)" stroke-dasharray="2 4"/>
             <g data-part="1">
-              <!-- pedal arm -->
-              <path class="part" d="M 180 320 L 175 175 L 165 100 L 145 95 L 140 105 L 158 175 L 168 318 Z" />
-              <!-- pivot -->
-              <circle class="part" cx="180" cy="320" r="5" />
-              <!-- pedal face -->
-              <rect class="part fill" x="115" y="78" width="35" height="22" rx="2" />
-              <!-- leader -->
-              <line class="leader" x1="155" y1="90" x2="80" y2="60" />
-              <circle class="pin" cx="80" cy="60" r="3.5" />
-              <text class="label-text" x="76" y="48">A1 · BRAKE PEDAL</text>
+              <path class="part" d="M 180 320 L 175 175 L 165 100 L 145 95 L 140 105 L 158 175 L 168 318 Z"/>
+              <circle class="part" cx="180" cy="320" r="5"/>
+              <rect class="part fill" x="115" y="78" width="35" height="22" rx="2"/>
+              <line class="leader" x1="155" y1="90" x2="80" y2="60"/>
+              <circle class="pin" cx="80" cy="60" r="3.5"/>
+              <text class="label-text" x="76" y="48">A1 - BRAKE PEDAL</text>
             </g>
-
-            <!-- 2. Accelerator Pedal -->
             <g data-part="2">
-              <path class="part" d="M 380 320 L 388 175 L 400 110 L 425 105 L 432 117 L 415 178 L 395 318 Z" />
-              <circle class="part" cx="380" cy="320" r="5" />
-              <rect class="part fill" x="425" y="88" width="38" height="22" rx="2" />
-              <line class="leader" x1="445" y1="100" x2="525" y2="65" />
-              <circle class="pin" cx="525" cy="65" r="3.5" />
-              <text class="label-text" x="442" y="55">A2 · ACCELERATOR</text>
+              <path class="part" d="M 380 320 L 388 175 L 400 110 L 425 105 L 432 117 L 415 178 L 395 318 Z"/>
+              <circle class="part" cx="380" cy="320" r="5"/>
+              <rect class="part fill" x="425" y="88" width="38" height="22" rx="2"/>
+              <line class="leader" x1="445" y1="100" x2="525" y2="65"/>
+              <circle class="pin" cx="525" cy="65" r="3.5"/>
+              <text class="label-text" x="442" y="55">A2 - ACCELERATOR</text>
             </g>
-
-            <!-- 3. Master Cylinders -->
             <g data-part="3">
-              <!-- two cylinders below floor -->
-              <rect class="part fill" x="150" y="345" width="80" height="22" rx="2" />
-              <rect class="part fill" x="240" y="345" width="80" height="22" rx="2" />
-              <!-- pushrods to brake pedal -->
-              <line class="part" x1="230" y1="356" x2="195" y2="320" />
-              <line class="part" x1="240" y1="356" x2="200" y2="320" />
-              <!-- caps -->
-              <line class="part" x1="150" y1="345" x2="150" y2="367" />
-              <line class="part" x1="320" y1="345" x2="320" y2="367" />
-              <line class="leader" x1="190" y1="370" x2="100" y2="395" />
-              <circle class="pin" cx="100" cy="395" r="3.5" />
-              <text class="label-text" x="48" y="410">B1 · MASTER CYL · DUAL</text>
+              <rect class="part fill" x="150" y="345" width="80" height="22" rx="2"/>
+              <rect class="part fill" x="240" y="345" width="80" height="22" rx="2"/>
+              <line class="part" x1="230" y1="356" x2="195" y2="320"/>
+              <line class="part" x1="240" y1="356" x2="200" y2="320"/>
+              <line class="part" x1="150" y1="345" x2="150" y2="367"/>
+              <line class="part" x1="320" y1="345" x2="320" y2="367"/>
+              <line class="leader" x1="190" y1="370" x2="100" y2="395"/>
+              <circle class="pin" cx="100" cy="395" r="3.5"/>
+              <text class="label-text" x="48" y="410">B1 - MASTER CYL - DUAL</text>
             </g>
-
-            <!-- 4. Balance Bar -->
             <g data-part="4">
-              <line class="part" x1="225" y1="356" x2="245" y2="356" stroke-width="3" />
-              <circle class="part" cx="235" cy="356" r="3.5" />
-              <line class="leader" x1="235" y1="362" x2="280" y2="395" />
-              <circle class="pin" cx="280" cy="395" r="3.5" />
-              <text class="label-text" x="245" y="410">B2 · BALANCE BAR</text>
+              <line class="part" x1="225" y1="356" x2="245" y2="356" stroke-width="3"/>
+              <circle class="part" cx="235" cy="356" r="3.5"/>
+              <line class="leader" x1="235" y1="362" x2="280" y2="395"/>
+              <circle class="pin" cx="280" cy="395" r="3.5"/>
+              <text class="label-text" x="245" y="410">B2 - BALANCE BAR</text>
             </g>
-
-            <!-- 5. APPS Sensor Mount -->
             <g data-part="5">
-              <rect class="part fill" x="392" y="304" width="20" height="18" rx="1" />
-              <line class="part" x1="402" y1="305" x2="402" y2="295" />
-              <circle class="part" cx="402" cy="293" r="2" />
-              <line class="leader" x1="412" y1="313" x2="475" y2="380" />
-              <circle class="pin" cx="475" cy="380" r="3.5" />
-              <text class="label-text" x="402" y="395">C1 · APPS SENSOR</text>
+              <rect class="part fill" x="392" y="304" width="20" height="18" rx="1"/>
+              <line class="part" x1="402" y1="305" x2="402" y2="295"/>
+              <circle class="part" cx="402" cy="293" r="2"/>
+              <line class="leader" x1="412" y1="313" x2="475" y2="380"/>
+              <circle class="pin" cx="475" cy="380" r="3.5"/>
+              <text class="label-text" x="402" y="395">C1 - APPS SENSOR</text>
             </g>
-
-            <!-- Static dimensions -->
-            <line x1="60" y1="40" x2="540" y2="40" stroke="rgba(76, 201, 240, 0.3)" stroke-width="0.5" stroke-dasharray="2 2" />
-            <line x1="60" y1="35" x2="60" y2="45" stroke="rgba(76, 201, 240, 0.4)" stroke-width="0.5" />
-            <line x1="540" y1="35" x2="540" y2="45" stroke="rgba(76, 201, 240, 0.4)" stroke-width="0.5" />
-            <text x="280" y="32" font-family="JetBrains Mono" font-size="9" fill="rgba(76, 201, 240, 0.55)" letter-spacing="0.08em">PEDAL BOX ASSEMBLY · SCALE 1:6</text>
+            <line x1="60" y1="40" x2="540" y2="40" stroke="rgba(76,201,240,0.3)" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <text x="280" y="32" font-family="JetBrains Mono" font-size="9" fill="rgba(76,201,240,0.55)" letter-spacing="0.08em">PEDAL BOX ASSEMBLY - SCALE 1:6</text>
           </svg>
         </div>
       </div>
-
-      <!-- SCROLL STEPS -->
       <div class="feature-steps" data-feature-target="pedal-box">
         <div class="feature-step" data-step="0">
-          <div class="step-num">/ 00 — OVERVIEW</div>
+          <div class="step-num">/ 00 - OVERVIEW</div>
           <h3>32-part assembly. Competition-validated. Zero failures.</h3>
           <p>Owned the brake architecture, pedal box design, and sensor integration on Dearborn Electric Racing's FSAE EV. The brake pedal alone went through 7 design and analysis iterations, validated to a 2.9 factor of safety against the rule-mandated 2,000 N load. The new layout gave the driver 80mm of additional leg room and integrated cleanly with the steel space frame.</p>
           <div class="stats">
@@ -1180,56 +983,45 @@
             <div class="stat"><span class="v">$2K</span>budget</div>
           </div>
         </div>
-
         <div class="feature-step" data-step="1">
-          <div class="step-num">/ A1 — BRAKE PEDAL</div>
+          <div class="step-num">/ A1 - BRAKE PEDAL</div>
           <h3>7 iterations. 2,000 N load. 2.9 factor of safety.</h3>
           <p>Modeled in SolidWorks and validated through SolidWorks Simulation against the FSAE-mandated 2,000 N load. The final pedal endured peak braking force with a 2.9 factor of safety. Reoriented the master cylinders during the redesign to free up driver leg room. Designed with simple machining in mind so it could be fabricated in-house.</p>
         </div>
-
         <div class="feature-step" data-step="2">
-          <div class="step-num">/ A2 — ACCELERATOR</div>
-          <h3>Accelerator pedal — return spring, hard stop, driver-adjustable extensions.</h3>
-          <p>Mirrors the brake pedal geometry on the right side with a return spring and a hard stop to bound travel. 3D-printed pedal extensions accommodated different driver heights without re-machining the main arms — useful when manufacturing time was tight.</p>
+          <div class="step-num">/ A2 - ACCELERATOR</div>
+          <h3>Accelerator pedal - return spring, hard stop, driver-adjustable extensions.</h3>
+          <p>Mirrors the brake pedal geometry on the right side with a return spring and a hard stop to bound travel. 3D-printed pedal extensions accommodated different driver heights without re-machining the main arms - useful when manufacturing time was tight.</p>
         </div>
-
         <div class="feature-step" data-step="3">
-          <div class="step-num">/ B1 — MASTER CYLINDERS</div>
-          <h3>Dual master cylinders — custom mounts, $2,000 total budget.</h3>
+          <div class="step-num">/ B1 - MASTER CYLINDERS</div>
+          <h3>Dual master cylinders - custom mounts, $2,000 total budget.</h3>
           <p>Two master cylinders, one for each brake circuit, mounted below the pedal box on weld-on steel tabs that tied into the steel space frame. Refurbished rotors and sourced calipers (AP Racing 4227 front, Magura rear) kept the entire brake system within the $2,000 budget.</p>
         </div>
-
         <div class="feature-step" data-step="4">
-          <div class="step-num">/ B2 — BALANCE BAR</div>
-          <h3>Adjustable front/rear brake bias — FSAE T.3.1.3 compliant.</h3>
-          <p>The balance bar is a pivoting link between the brake pedal and the two master cylinders. Adjusts brake bias front-to-rear without re-plumbing the system — critical for tuning across track conditions and rule-required by FSAE T.3.1.3 (two independent hydraulic circuits).</p>
+          <div class="step-num">/ B2 - BALANCE BAR</div>
+          <h3>Adjustable front/rear brake bias - FSAE T.3.1.3 compliant.</h3>
+          <p>The balance bar is a pivoting link between the brake pedal and the two master cylinders. Adjusts brake bias front-to-rear without re-plumbing the system - critical for tuning across track conditions and rule-required by FSAE T.3.1.3 (two independent hydraulic circuits).</p>
         </div>
-
         <div class="feature-step" data-step="5">
-          <div class="step-num">/ C1 — APPS SENSOR MOUNT</div>
-          <h3>APPS and brake pressure mounts — 3D-printed, tuned to pedal pivot axis.</h3>
+          <div class="step-num">/ C1 - APPS SENSOR MOUNT</div>
+          <h3>APPS and brake pressure mounts - 3D-printed, tuned to pedal pivot axis.</h3>
           <p>Custom mounts for the Accelerator Pedal Position Sensor and brake pressure sensors, designed in coordination with the electrical and software teams. 3D-printed for fast iteration and tight geometry around the pedal pivot axis. The full pedal box assembly passed FSAE pre-competition CAD review on the first attempt.</p>
-          <div style="margin-top: 32px;">
-            <a class="btn btn-ghost" href="Pedal_Box_v9.zip" download>Download CAD Files (.zip) →</a>
-          </div>
+          <div style="margin-top: 32px;"><a class="btn btn-ghost" href="Pedal_Box_v9.zip" download>Download CAD Files (.zip) &rarr;</a></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PEDAL BOX RENDER GALLERY ===== -->
 <section id="pedal-renders" class="feature" style="padding-top: 60px;">
   <div class="container">
     <div class="section-header">
-      <span class="index">01.5 / RENDERS</span>
-      <span class="line"></span>
-      <span class="title">CAD · Iterations · Analysis</span>
+      <span class="index">01.5 / RENDERS</span><span class="line"></span><span class="title">CAD &middot; Iterations &middot; Analysis</span>
     </div>
-
     <div class="case-title" style="margin-bottom: 24px;">
       <div>
-        <div class="kicker">SolidWorks · SolidWorks Simulation</div>
+        <div class="kicker">SolidWorks &middot; SolidWorks Simulation</div>
         <h2>SolidWorks Models. FEA Results. Seven Iterations.</h2>
       </div>
       <div class="spec-table">
@@ -1239,228 +1031,171 @@
         <div class="row"><span>Comp. Result</span><span class="v">No Failure</span></div>
       </div>
     </div>
-
     <div class="render-grid">
-      <!-- Hero: full FSAE car master CAD -->
       <div class="render-ph has-image span-2">
-        <img class="render-img" src="fsae-car-master.jpg" alt="FSAE EV master CAD with all subsystems integrated" style="object-fit: contain;" />
-        <span class="bracket tl"></span><span class="bracket tr"></span>
-        <span class="bracket bl"></span><span class="bracket br"></span>
-        <div class="label"><span class="dot">●</span> FSAE EV · MASTER CAD · 1,644 PARTS</div>
+        <img class="render-img" src="fsae-car-master.jpg" alt="FSAE EV master CAD" style="object-fit: contain;"/>
+        <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+        <div class="label"><span class="dot">&#9679;</span> FSAE EV &middot; MASTER CAD &middot; 1,644 PARTS</div>
         <div class="filename">fsae-car-master.jpg</div>
       </div>
-
-      <!-- Pedal box assembly + brake pedal final -->
       <div class="render-ph has-image">
-        <img class="render-img" src="pedal-box-assembly.jpg" alt="Pedal box assembly with master cylinders" style="object-fit: contain;" />
-        <span class="bracket tl"></span><span class="bracket tr"></span>
-        <span class="bracket bl"></span><span class="bracket br"></span>
-        <div class="label"><span class="dot">●</span> PEDAL BOX · FRONT VIEW</div>
+        <img class="render-img" src="pedal-box-assembly.jpg" alt="Pedal box assembly" style="object-fit: contain;"/>
+        <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+        <div class="label"><span class="dot">&#9679;</span> PEDAL BOX &middot; FRONT VIEW</div>
         <div class="filename">pedal-box-assembly.jpg</div>
       </div>
-
       <div class="render-ph has-image">
-        <img class="render-img" src="brake-pedal-final.jpg" alt="Brake pedal v7 final design isometric" style="object-fit: contain;" />
-        <span class="bracket tl"></span><span class="bracket tr"></span>
-        <span class="bracket bl"></span><span class="bracket br"></span>
-        <div class="label"><span class="dot">●</span> BRAKE PEDAL · v7 FINAL</div>
+        <img class="render-img" src="brake-pedal-final.jpg" alt="Brake pedal v7 final" style="object-fit: contain;"/>
+        <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+        <div class="label"><span class="dot">&#9679;</span> BRAKE PEDAL &middot; v7 FINAL</div>
         <div class="filename">brake-pedal-final.jpg</div>
       </div>
-
-      <!-- Iterations + FEA -->
       <div class="render-ph has-image">
-        <img class="render-img" src="pedal-iterations.jpg" alt="Six brake pedal iterations side by side" style="object-fit: contain;" />
-        <span class="bracket tl"></span><span class="bracket tr"></span>
-        <span class="bracket bl"></span><span class="bracket br"></span>
-        <div class="label"><span class="dot">●</span> 7 ITERATIONS · v1 → v7</div>
+        <img class="render-img" src="pedal-iterations.jpg" alt="Seven brake pedal iterations" style="object-fit: contain;"/>
+        <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+        <div class="label"><span class="dot">&#9679;</span> 7 ITERATIONS &middot; v1 &rarr; v7</div>
         <div class="filename">pedal-iterations.jpg</div>
       </div>
-
       <div class="render-ph has-image">
-        <img class="render-img" src="brake-pedal-fea.jpg" alt="Brake pedal FEA von Mises stress plot" style="object-fit: contain;" />
-        <span class="bracket tl"></span><span class="bracket tr"></span>
-        <span class="bracket bl"></span><span class="bracket br"></span>
-        <div class="label"><span class="dot">●</span> FEA · von MISES · FoS 2.9</div>
+        <img class="render-img" src="brake-pedal-fea.jpg" alt="Brake pedal FEA" style="object-fit: contain;"/>
+        <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+        <div class="label"><span class="dot">&#9679;</span> FEA &middot; von MISES &middot; FoS 2.9</div>
         <div class="filename">brake-pedal-fea.jpg</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FEATURED WORK — DIFFERENTIAL BAR ===== -->
 <section id="rover" class="feature">
   <div class="container">
     <div class="section-header">
-      <span class="index">02 / FEATURED</span>
-      <span class="line"></span>
-      <span class="title">MRover · Sep 2025 — Present</span>
+      <span class="index">02 / FEATURED</span><span class="line"></span><span class="title">MRover &middot; Sep 2025 - Present</span>
     </div>
-
     <div class="case-title" style="margin-bottom: 56px;">
       <div>
-        <div class="kicker">Michigan Mars Rover Team · Chassis Engineer</div>
+        <div class="kicker">Michigan Mars Rover Team &middot; Chassis Engineer</div>
         <h2>Differential Bar Redesign. Chassis Body Engineering.</h2>
       </div>
       <div class="spec-table">
         <div class="row"><span>System</span><span class="v">Chassis</span></div>
         <div class="row"><span>Software</span><span class="v">Siemens NX</span></div>
-        <div class="row"><span>Materials</span><span class="v">Carbon · Metal</span></div>
+        <div class="row"><span>Materials</span><span class="v">Carbon &middot; Metal</span></div>
         <div class="row"><span>Manufacturing</span><span class="v">In-House</span></div>
         <div class="row"><span>Status</span><span class="v">In Design</span></div>
       </div>
     </div>
-
     <div class="feature-grid">
-      <!-- STICKY VISUAL -->
       <div class="feature-stage">
         <div class="feature-rail" data-rail-target="diff-bar">
           <button class="rail-item" data-rail-step="0">Why It Matters</button>
-          <button class="rail-item" data-rail-step="1">D1 · Differential Bar</button>
-          <button class="rail-item" data-rail-step="2">D2 · Center Pivot</button>
-          <button class="rail-item" data-rail-step="3">E1 · Tie Rod Ends</button>
-          <button class="rail-item" data-rail-step="4">F1 · Rocker Arms</button>
-          <button class="rail-item" data-rail-step="5">G1 · Load Path</button>
+          <button class="rail-item" data-rail-step="1">D1 &middot; Differential Bar</button>
+          <button class="rail-item" data-rail-step="2">D2 &middot; Center Pivot</button>
+          <button class="rail-item" data-rail-step="3">E1 &middot; Tie Rod Ends</button>
+          <button class="rail-item" data-rail-step="4">F1 &middot; Rocker Arms</button>
+          <button class="rail-item" data-rail-step="5">G1 &middot; Load Path</button>
         </div>
         <div class="feature-canvas" data-active="0" data-feature="diff-bar">
-          <span class="bracket tl"></span><span class="bracket tr"></span>
-          <span class="bracket bl"></span><span class="bracket br"></span>
-          <div class="label"><span class="dot">●</span> DIFF_BAR · FRONT VIEW</div>
-          <div class="mode-tag">
-            <span class="mode-overview">SCHEMATIC · OVERVIEW</span>
-            <span class="mode-detail">BLUEPRINT · DETAIL</span>
-          </div>
-
+          <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+          <div class="label"><span class="dot">&#9679;</span> DIFF_BAR &middot; FRONT VIEW</div>
+          <div class="mode-tag"><span class="mode-overview">SCHEMATIC &middot; OVERVIEW</span><span class="mode-detail">BLUEPRINT &middot; DETAIL</span></div>
           <svg class="schematic" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <!-- Static ground line -->
-            <line x1="40" y1="340" x2="560" y2="340" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 5" />
-
-            <!-- Chassis (always visible) -->
-            <rect x="240" y="160" width="120" height="70" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" rx="2" />
+            <line x1="40" y1="340" x2="560" y2="340" stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 5"/>
+            <rect x="240" y="160" width="120" height="70" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" rx="2"/>
             <text x="282" y="200" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.4)" letter-spacing="0.08em">CHASSIS</text>
-
-            <!-- 1. Differential Bar -->
             <g data-part="1">
-              <!-- horizontal bar across top of chassis -->
-              <rect class="part fill" x="195" y="146" width="210" height="14" rx="3" />
-              <!-- Pivot mount line -->
-              <line class="part" x1="300" y1="146" x2="300" y2="160" />
-              <line class="leader" x1="300" y1="142" x2="300" y2="80" />
-              <circle class="pin" cx="300" cy="80" r="3.5" />
-              <text class="label-text" x="240" y="68">D1 · DIFFERENTIAL BAR</text>
+              <rect class="part fill" x="195" y="146" width="210" height="14" rx="3"/>
+              <line class="part" x1="300" y1="146" x2="300" y2="160"/>
+              <line class="leader" x1="300" y1="142" x2="300" y2="80"/>
+              <circle class="pin" cx="300" cy="80" r="3.5"/>
+              <text class="label-text" x="240" y="68">D1 - DIFFERENTIAL BAR</text>
             </g>
-
-            <!-- 2. Center pivot -->
             <g data-part="2">
-              <circle class="part fill" cx="300" cy="153" r="6" />
-              <circle class="part" cx="300" cy="153" r="2" />
-              <line class="leader" x1="307" y1="153" x2="430" y2="115" />
-              <circle class="pin" cx="430" cy="115" r="3.5" />
-              <text class="label-text" x="370" y="105">D2 · CENTER PIVOT</text>
+              <circle class="part fill" cx="300" cy="153" r="6"/>
+              <circle class="part" cx="300" cy="153" r="2"/>
+              <line class="leader" x1="307" y1="153" x2="430" y2="115"/>
+              <circle class="pin" cx="430" cy="115" r="3.5"/>
+              <text class="label-text" x="370" y="105">D2 - CENTER PIVOT</text>
             </g>
-
-            <!-- 3. Tie rod ends (left + right) -->
             <g data-part="3">
-              <!-- left end -->
-              <circle class="part fill" cx="200" cy="153" r="6" />
-              <line class="part" x1="200" y1="160" x2="170" y2="200" />
-              <!-- right end -->
-              <circle class="part fill" cx="400" cy="153" r="6" />
-              <line class="part" x1="400" y1="160" x2="430" y2="200" />
-              <line class="leader" x1="200" y1="160" x2="120" y2="120" />
-              <circle class="pin" cx="120" cy="120" r="3.5" />
-              <text class="label-text" x="65" y="108">E1 · TIE ROD ENDS</text>
+              <circle class="part fill" cx="200" cy="153" r="6"/>
+              <line class="part" x1="200" y1="160" x2="170" y2="200"/>
+              <circle class="part fill" cx="400" cy="153" r="6"/>
+              <line class="part" x1="400" y1="160" x2="430" y2="200"/>
+              <line class="leader" x1="200" y1="160" x2="120" y2="120"/>
+              <circle class="pin" cx="120" cy="120" r="3.5"/>
+              <text class="label-text" x="65" y="108">E1 - TIE ROD ENDS</text>
             </g>
-
-            <!-- 4. Rocker arms -->
             <g data-part="4">
-              <!-- left rocker -->
-              <path class="part" d="M 170 200 L 110 250 L 80 320" />
-              <!-- right rocker -->
-              <path class="part" d="M 430 200 L 490 250 L 520 320" />
-              <!-- pivots at chassis -->
-              <circle class="part fill" cx="245" cy="195" r="5" />
-              <circle class="part fill" cx="355" cy="195" r="5" />
-              <line class="part" x1="245" y1="195" x2="170" y2="200" />
-              <line class="part" x1="355" y1="195" x2="430" y2="200" />
-              <line class="leader" x1="110" y1="250" x2="60" y2="280" />
-              <circle class="pin" cx="60" cy="280" r="3.5" />
-              <text class="label-text" x="38" y="270">F1 · ROCKER ARMS</text>
+              <path class="part" d="M 170 200 L 110 250 L 80 320"/>
+              <path class="part" d="M 430 200 L 490 250 L 520 320"/>
+              <circle class="part fill" cx="245" cy="195" r="5"/>
+              <circle class="part fill" cx="355" cy="195" r="5"/>
+              <line class="part" x1="245" y1="195" x2="170" y2="200"/>
+              <line class="part" x1="355" y1="195" x2="430" y2="200"/>
+              <line class="leader" x1="110" y1="250" x2="60" y2="280"/>
+              <circle class="pin" cx="60" cy="280" r="3.5"/>
+              <text class="label-text" x="38" y="270">F1 - ROCKER ARMS</text>
             </g>
-
-            <!-- 5. Wheels (function/load path) -->
             <g data-part="5">
-              <circle class="part" cx="80" cy="320" r="20" />
-              <circle class="part fill" cx="80" cy="320" r="10" />
-              <circle class="part" cx="520" cy="320" r="20" />
-              <circle class="part fill" cx="520" cy="320" r="10" />
-              <line class="leader" x1="80" y1="345" x2="180" y2="395" />
-              <circle class="pin" cx="180" cy="395" r="3.5" />
-              <text class="label-text" x="115" y="410">G1 · WHEELS · LOAD PATH</text>
+              <circle class="part" cx="80" cy="320" r="20"/>
+              <circle class="part fill" cx="80" cy="320" r="10"/>
+              <circle class="part" cx="520" cy="320" r="20"/>
+              <circle class="part fill" cx="520" cy="320" r="10"/>
+              <line class="leader" x1="80" y1="345" x2="180" y2="395"/>
+              <circle class="pin" cx="180" cy="395" r="3.5"/>
+              <text class="label-text" x="115" y="410">G1 - WHEELS - LOAD PATH</text>
             </g>
-
-            <!-- Title strip -->
-            <line x1="40" y1="40" x2="560" y2="40" stroke="rgba(76, 201, 240, 0.3)" stroke-width="0.5" stroke-dasharray="2 2" />
-            <text x="240" y="32" font-family="JetBrains Mono" font-size="9" fill="rgba(76, 201, 240, 0.55)" letter-spacing="0.08em">ROCKER-BOGIE · FRONT VIEW</text>
+            <line x1="40" y1="40" x2="560" y2="40" stroke="rgba(76,201,240,0.3)" stroke-width="0.5" stroke-dasharray="2 2"/>
+            <text x="240" y="32" font-family="JetBrains Mono" font-size="9" fill="rgba(76,201,240,0.55)" letter-spacing="0.08em">ROCKER-BOGIE - FRONT VIEW</text>
           </svg>
         </div>
       </div>
-
-      <!-- SCROLL STEPS -->
       <div class="feature-steps" data-feature-target="diff-bar">
         <div class="feature-step" data-step="0">
-          <div class="step-num">/ 00 — THE ROLE</div>
-          <h3>Differential bar — equalizing six-wheel suspension loads.</h3>
-          <p>As Chassis Engineer on the Michigan Mars Rover Team, I'm designing the differential bar and chassis body components in Siemens NX. The differential bar is the equalizer in a rocker-bogie suspension — when one side climbs an obstacle, the bar transfers that motion to the opposite rocker so all six wheels stay loaded. The redesign is focused on tighter tolerances and cleaner joint geometry to reduce lost motion.</p>
+          <div class="step-num">/ 00 - THE ROLE</div>
+          <h3>Differential bar - equalizing six-wheel suspension loads.</h3>
+          <p>As Chassis Engineer on the Michigan Mars Rover Team, I'm designing the differential bar and chassis body components in Siemens NX. The differential bar is the equalizer in a rocker-bogie suspension - when one side climbs an obstacle, the bar transfers that motion to the opposite rocker so all six wheels stay loaded.</p>
           <div class="stats">
             <div class="stat"><span class="v">NX</span>Siemens NX</div>
             <div class="stat"><span class="v">6</span>wheels equalized</div>
             <div class="stat"><span class="v">URC</span>competition</div>
           </div>
         </div>
-
         <div class="feature-step" data-step="1">
-          <div class="step-num">/ D1 — DIFFERENTIAL BAR</div>
+          <div class="step-num">/ D1 - DIFFERENTIAL BAR</div>
           <h3>Reduced clearance. Tighter fits. Less lost motion.</h3>
-          <p>The bar itself is a pivoting beam across the chassis spine, with each end linked to one rocker arm. The current design pass focuses on tighter machining tolerances and a redesigned joint at each end — both targeted at reducing lost motion through the equalizer, which is critical for the suspension to actually equalize wheel loads instead of slipping through clearance.</p>
+          <p>The bar itself is a pivoting beam across the chassis spine, with each end linked to one rocker arm. The current design pass focuses on tighter machining tolerances and a redesigned joint at each end - both targeted at reducing lost motion through the equalizer.</p>
         </div>
-
         <div class="feature-step" data-step="2">
-          <div class="step-num">/ D2 — CENTER PIVOT</div>
-          <h3>Center pivot — bending and shear under full suspension load.</h3>
-          <p>The center pivot is the only attachment point between the bar and the chassis body. It handles bending and shear under full suspension load while staying low-friction. Bearing and shaft sizing are tuned both for load capacity and for the smooth motion the equalizer behavior depends on.</p>
+          <div class="step-num">/ D2 - CENTER PIVOT</div>
+          <h3>Center pivot - bending and shear under full suspension load.</h3>
+          <p>The center pivot is the only attachment point between the bar and the chassis body. It handles bending and shear under full suspension load while staying low-friction. Bearing and shaft sizing are tuned for both load capacity and smooth motion.</p>
         </div>
-
         <div class="feature-step" data-step="3">
-          <div class="step-num">/ E1 — JOINTS</div>
-          <h3>Rod end selection and tie-rod geometry — eliminating lost motion at the joints.</h3>
-          <p>Each end of the bar connects to its rocker through a rotating joint. Redesigning these joints — picking better rod ends, tightening fits, and reworking the tie-rod geometry — was the biggest lever for reducing lost motion. Working with carbon fiber and metal joining for these parts means the joint design also has to play nicely with the chosen materials.</p>
+          <div class="step-num">/ E1 - JOINTS</div>
+          <h3>Rod end selection and tie-rod geometry - eliminating lost motion at the joints.</h3>
+          <p>Each end of the bar connects to its rocker through a rotating joint. Redesigning these joints - picking better rod ends, tightening fits, and reworking the tie-rod geometry - was the biggest lever for reducing lost motion.</p>
         </div>
-
         <div class="feature-step" data-step="4">
-          <div class="step-num">/ F1 — CHASSIS BODY</div>
-          <h3>Chassis body — cross-team integration, carbon fiber and metal.</h3>
-          <p>Beyond the differential bar, I'm designing chassis body components that integrate with electrical and software subsystems. Coordinating across teams to make sure the chassis can house the boards, cameras, and wiring while staying lightweight and stiff. Carbon fiber on the panels, metal joining where the load paths concentrate.</p>
+          <div class="step-num">/ F1 - CHASSIS BODY</div>
+          <h3>Chassis body - cross-team integration, carbon fiber and metal.</h3>
+          <p>Beyond the differential bar, I'm designing chassis body components that integrate with electrical and software subsystems. Carbon fiber on the panels, metal joining where the load paths concentrate.</p>
         </div>
-
         <div class="feature-step" data-step="5">
-          <div class="step-num">/ G1 — IN-HOUSE BUILD</div>
-          <h3>In-house fabrication — mill, lathe, laser cutter, 3D printer.</h3>
-          <p>Manufacturing parts in-house using the team's mill, lathe, laser cutter, and 3D printer — cutting cost compared to stock and external machining. Carbon fiber layup and metal joining for the differential parts and joint rotation hardware. The combination of designing in NX and machining the parts myself tightens the feedback loop on tolerance choices.</p>
+          <div class="step-num">/ G1 - IN-HOUSE BUILD</div>
+          <h3>In-house fabrication - mill, lathe, laser cutter, 3D printer.</h3>
+          <p>Manufacturing parts in-house using the team's mill, lathe, laser cutter, and 3D printer. Carbon fiber layup and metal joining for the differential parts and joint rotation hardware. Designing in NX and machining the parts myself tightens the feedback loop on tolerance choices.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CAPABILITIES ===== -->
 <section id="capabilities" class="about">
   <div class="container">
     <div class="section-header">
-      <span class="index">02 / CAPABILITIES</span>
-      <span class="line"></span>
-      <span class="title">Software · Methods · Tools</span>
+      <span class="index">03 / CAPABILITIES</span><span class="line"></span><span class="title">Software &middot; Methods &middot; Tools</span>
     </div>
-
     <div class="about-grid" style="align-items: start; margin-bottom: var(--gap-block);">
       <div>
         <div class="kicker">Core Toolchain</div>
@@ -1473,74 +1208,35 @@
         <div class="row"><span>Manufacturing</span><span class="v">In-House</span></div>
       </div>
     </div>
-
     <div class="skills-grid">
-      <div class="skill">
-        <div class="num">/ 01</div>
-        <div class="name">SolidWorks</div>
-        <div class="meta">Parts · Assemblies · Drawings</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 02</div>
-        <div class="name">Siemens NX</div>
-        <div class="meta">Chassis · Differential · MRover</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 03</div>
-        <div class="name">SW Simulation</div>
-        <div class="meta">Static · FEA · FoS Analysis</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 04</div>
-        <div class="name">AutoCAD</div>
-        <div class="meta">2D Drafting · Layouts</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 05</div>
-        <div class="name">Mill &amp; Lathe</div>
-        <div class="meta">In-House Machining · Tolerancing</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 06</div>
-        <div class="name">3D Printing</div>
-        <div class="meta">Sensor Mounts · Prototypes</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 07</div>
-        <div class="name">Laser Cutting</div>
-        <div class="meta">Sheet Stock · Templates</div>
-      </div>
-      <div class="skill">
-        <div class="num">/ 08</div>
-        <div class="name">Carbon &amp; Metal Joining</div>
-        <div class="meta">Composite Layup · Welding Prep</div>
-      </div>
+      <div class="skill"><div class="num">/ 01</div><div class="name">SolidWorks</div><div class="meta">Parts &middot; Assemblies &middot; Drawings</div></div>
+      <div class="skill"><div class="num">/ 02</div><div class="name">Siemens NX</div><div class="meta">Chassis &middot; Differential &middot; MRover</div></div>
+      <div class="skill"><div class="num">/ 03</div><div class="name">SW Simulation</div><div class="meta">Static &middot; FEA &middot; FoS Analysis</div></div>
+      <div class="skill"><div class="num">/ 04</div><div class="name">AutoCAD</div><div class="meta">2D Drafting &middot; Layouts</div></div>
+      <div class="skill"><div class="num">/ 05</div><div class="name">Mill &amp; Lathe</div><div class="meta">In-House Machining &middot; Tolerancing</div></div>
+      <div class="skill"><div class="num">/ 06</div><div class="name">3D Printing</div><div class="meta">Sensor Mounts &middot; Prototypes</div></div>
+      <div class="skill"><div class="num">/ 07</div><div class="name">Laser Cutting</div><div class="meta">Sheet Stock &middot; Templates</div></div>
+      <div class="skill"><div class="num">/ 08</div><div class="name">Carbon &amp; Metal Joining</div><div class="meta">Composite Layup &middot; Welding Prep</div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="index">03 / CONTACT</span>
-      <span class="line"></span>
-      <span class="title">Open to Spring–Summer 2026</span>
+      <span class="index">04 / CONTACT</span><span class="line"></span><span class="title">Open to Spring-Summer 2026</span>
     </div>
-
     <div class="contact-grid">
       <div>
-        <div class="kicker" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--fg-50); margin-bottom: 16px; text-transform: uppercase;">Mechanical Design Internship · 2026</div>
-        <h2>Open for Spring–Summer 2026 Internships.</h2>
+        <div class="kicker" style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--fg-50); margin-bottom: 16px; text-transform: uppercase;">Mechanical Design Internship &middot; 2026</div>
+        <h2>Open for Spring-Summer 2026 Internships.</h2>
       </div>
       <div class="spec-table">
-
         <div class="row"><span>Email</span><span class="v">@gmail.com</span></div>
         <div class="row"><span>LinkedIn</span><span class="v">/lucasgoellnerpf</span></div>
         <div class="row"><span>Status</span><span class="v">Open</span></div>
       </div>
     </div>
-
     <div class="contact-actions">
       <a class="contact-card" href="mailto:goellnerlucas@gmail.com">
         <div class="label">/ EMAIL</div>
@@ -1553,9 +1249,9 @@
         <div class="meta">Connect &amp; message</div>
       </a>
       <a class="contact-card" href="Lucas%20Goellner%202026%20Resume.pdf" target="_blank">
-        <div class="label">/ RESUME · 2026</div>
+        <div class="label">/ RESUME &middot; 2026</div>
         <div class="value">View .pdf</div>
-        <div class="meta">Latest — MRover &amp; FSAE</div>
+        <div class="meta">Latest - MRover &amp; FSAE</div>
       </a>
       <a class="contact-card" href="Pedal_Box_v9.zip" download>
         <div class="label">/ CAD FILES</div>
@@ -1567,92 +1263,55 @@
 </section>
 
 <footer>
-  <span class="brand-mark" style="display: inline-block; width: 8px; height: 8px; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-22); border-radius: 50%;"></span>
-  Lucas Goellner · Mechanical Engineering · 2026
+  <span class="brand-mark" style="display:inline-block;width:8px;height:8px;background:var(--accent);box-shadow:0 0 0 3px var(--accent-22);border-radius:50%;"></span>
+  Lucas Goellner &middot; Mechanical Engineering &middot; 2026
 </footer>
 
 <script>
-  // Smooth scroll for in-page nav links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function (e) {
+    a.addEventListener('click', function(e) {
       const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
-
-  // Scroll-driven highlighting for featured projects
-  // Each .feature-steps[data-feature-target] block drives the matching
-  // .feature-canvas[data-feature] element by setting its data-active attribute
-  // to the step that's currently centered in the viewport.
-  (function () {
-    const stepsContainers = document.querySelectorAll('.feature-steps[data-feature-target]');
-    if (!stepsContainers.length) return;
-
-    stepsContainers.forEach(container => {
-      const targetKey = container.dataset.featureTarget;
-      const canvas = document.querySelector(`.feature-canvas[data-feature="${targetKey}"]`);
-      const rail = document.querySelector(`.feature-rail[data-rail-target="${targetKey}"]`);
+  (function() {
+    const containers = document.querySelectorAll('.feature-steps[data-feature-target]');
+    if (!containers.length) return;
+    containers.forEach(container => {
+      const key = container.dataset.featureTarget;
+      const canvas = document.querySelector('.feature-canvas[data-feature="' + key + '"]');
+      const rail = document.querySelector('.feature-rail[data-rail-target="' + key + '"]');
       const steps = container.querySelectorAll('.feature-step');
       if (!canvas || !steps.length) return;
-
       const railItems = rail ? rail.querySelectorAll('.rail-item') : [];
-
-      const activate = (step) => {
+      const activate = step => {
         steps.forEach(s => s.classList.remove('is-active'));
         step.classList.add('is-active');
         canvas.dataset.active = step.dataset.step;
-        // Sync the rail
-        railItems.forEach(item => item.classList.remove('is-active'));
-        const matchingRail = rail ? rail.querySelector(`.rail-item[data-rail-step="${step.dataset.step}"]`) : null;
-        if (matchingRail) matchingRail.classList.add('is-active');
+        railItems.forEach(i => i.classList.remove('is-active'));
+        const r = rail ? rail.querySelector('.rail-item[data-rail-step="' + step.dataset.step + '"]') : null;
+        if (r) r.classList.add('is-active');
       };
-
-      // Make rail items jump to their step
       railItems.forEach(item => {
         item.addEventListener('click', () => {
-          const stepIdx = item.dataset.railStep;
-          const targetStep = container.querySelector(`.feature-step[data-step="${stepIdx}"]`);
-          if (targetStep) {
-            targetStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
+          const t = container.querySelector('.feature-step[data-step="' + item.dataset.railStep + '"]');
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
       });
-
-      // Pick the step whose midpoint is closest to viewport midpoint
       const update = () => {
-        const vh = window.innerHeight;
-        const midY = vh / 2;
-        let closest = null;
-        let closestDist = Infinity;
+        const mid = window.innerHeight / 2;
+        let closest = null, dist = Infinity;
         steps.forEach(step => {
           const r = step.getBoundingClientRect();
-          // Only consider steps that overlap the viewport at all
-          if (r.bottom < 0 || r.top > vh) return;
-          const stepMid = r.top + r.height / 2;
-          const dist = Math.abs(stepMid - midY);
-          if (dist < closestDist) {
-            closestDist = dist;
-            closest = step;
-          }
+          if (r.bottom < 0 || r.top > window.innerHeight) return;
+          const d = Math.abs(r.top + r.height / 2 - mid);
+          if (d < dist) { dist = d; closest = step; }
         });
         if (closest) activate(closest);
       };
-
-      // Throttled scroll handler
       let raf = null;
-      const onScroll = () => {
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          update();
-          raf = null;
-        });
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      // Initial state
+      window.addEventListener('scroll', () => { if (raf) return; raf = requestAnimationFrame(() => { update(); raf = null; }); }, { passive: true });
+      window.addEventListener('resize', update);
       update();
     });
   })();
